@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page d'authentification</title>
+    <!-- Inclure les liens vers les fichiers CSS et JS nécessaires -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Page d'authentification</h1>
+    <form id="loginForm">
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Se connecter</button>
+    </form>
+    <script>
+        // Code JavaScript pour gérer la soumission du formulaire
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher la soumission du formulaire
+
+            // Récupérer les valeurs du formulaire
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Effectuer la vérification de l'authentification (exemple basique)
+            if (username === 'utilisateur' && password === 'motdepasse') {
+                // Authentification réussie, rediriger vers la page protégée
+                window.location.href = 'page_protegee.html';
+            } else {
+                // Afficher un message d'erreur
+                alert('Nom d\'utilisateur ou mot de passe incorrect');
+            }
+        });
+    </script>
+</body>
+</html>
